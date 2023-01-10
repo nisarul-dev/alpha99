@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello Dolly</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <?php wp_head(); ?>
     <style>
         h1.heading {
             font-family: "Arial Black";
@@ -195,5 +194,6 @@
         </div>
     </div>
 </div>
+<?php wp_footer(); ?>
 </body>
 </html>
