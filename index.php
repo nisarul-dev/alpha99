@@ -93,7 +93,7 @@
                 <div class="col-md-4">
                     <p>
                         <strong><?php the_author(); ?></strong><br/>
-                        <?php the_date('jS F, Y'); ?>
+                        <?php echo get_the_date('jS F, Y'); ?>
                     </p>
                     <div class="tags">
                         <?php echo get_the_tag_list( '<ul class="list-unstyled"><li>', '</li><li>', '</li></ul>' ) ?>
