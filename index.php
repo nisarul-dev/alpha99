@@ -82,7 +82,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="post-title"><?php the_title(); ?></h2>
+                    <h2 class="post-title">
+                        <a href="<?php the_permalink(); ?>">
+                            <?php the_title(); ?>
+                        </a>
+                    </h2>
                 </div>
             </div>
             <div class="row">
@@ -103,7 +107,11 @@
 						 ) );
                     ?>
                     </p>
-                    <?php the_excerpt(); ?>
+                    <?php if( is_single() ) {
+						the_content();
+                    } else {
+						the_excerpt();
+                    } ?>
                 </div>
             </div>
 
