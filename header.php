@@ -59,6 +59,10 @@
 		.tags li a {
 			color: #3D9970;
 		}
+
+        img {
+            max-width: 100%;
+        }
 	</style>
 </head>
 

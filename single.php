@@ -27,6 +27,11 @@
 							<?php the_content(); ?>
 						</div>
 
+						<div class="col-md-10 offset-md-1 my-5 d-flex justify-content-between">
+							<p><?php echo previous_post_link(); ?></p>
+							<p class="text-right"><?php echo next_post_link(); ?></p>
+						</div>
+
 						<?php if ( comments_open() ) : ?>
 						<div class="col-md-10 offset-md-1 my-5">
 							<?php comments_template(); ?>
@@ -39,19 +44,6 @@
 		<?php
 		endwhile;
 		?>
-
-		<div class="container post-pagination my-4 py-5">
-			<div class="row">
-				<div class="col-md-4">
-				</div>
-				<div class="col-md-8">
-					<?php the_posts_pagination( array(
-						'prev_text' => '<< New Posts',
-						'next_text' => 'Old Posts >>',
-					) ); ?>
-				</div>
-			</div>
-		</div>
 
 	</div>
 <?php get_footer(); ?>
