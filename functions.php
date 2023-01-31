@@ -13,3 +13,36 @@ function alpha99_assets() {
 	wp_enqueue_style( 'bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' );
 }
 add_action( 'wp_enqueue_scripts', 'alpha99_assets' );
+
+function alpha99_sidebar() {
+	register_sidebar( array(
+		'name'          => __( 'Single Post Sidebar', 'alpha99' ),
+		'id'            => 'sidebar-1',
+		'description'   => __( 'Right Sidebar', 'alpha99' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class-"widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Footer Left Area', 'alpha99' ),
+		'id' => 'footer-left',
+		'description' => __( 'Footer left area text', 'alpha99' ),
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h2 class-"widget-title">',
+		'after_title' => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Footer Right Area', 'alpha99' ),
+		'id' => 'footer-right',
+		'description' => __( 'Footer left area text', 'alpha99' ),
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h2 class-"widget-title">',
+		'after_title' => '</h2>',
+	) );
+}
+add_action( "widgets_init", "alpha99_sidebar" );
