@@ -38,7 +38,7 @@ function alpha99_sidebar() {
 	register_sidebar( array(
 		'name' => __( 'Footer Right Area', 'alpha99' ),
 		'id' => 'footer-right',
-		'description' => __( 'Footer left area text', 'alpha99' ),
+		'description' => __( 'Footer Right area text', 'alpha99' ),
 		'before_widget' => '',
 		'after_widget' => '',
 		'before_title' => '<h2 class-"widget-title">',
@@ -46,3 +46,21 @@ function alpha99_sidebar() {
 	) );
 }
 add_action( "widgets_init", "alpha99_sidebar" );
+
+function alpha99_the_excerpt( $excerpt ) {
+	if (!post_password_required()) {
+		return $excerpt;
+	} else {
+		return get_the_password_form();
+	}
+}
+add_action( "the_excerpt", "alpha99_the_excerpt" );
+
+function alpha99_post_title( $title ) {
+	if (!post_password_required()) {
+		return "%s";
+	} else {
+		return "Locked: %s";
+	}
+}
+add_filter( 'protected_title_format', 'alpha99_post_title' );
