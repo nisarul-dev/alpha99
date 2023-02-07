@@ -5,6 +5,8 @@ function alpha99_bootstrapping()
 	load_theme_textdomain( 'alpha99' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( "title-tag" );
+	register_nav_menu( 'primary', __( 'Header Menu', 'alpha99' ) );
+	register_nav_menu( 'secondary', __( 'Footer Menu', 'alpha99' ) );
 }
 add_action( 'after_setup_theme', 'alpha99_bootstrapping' );
 
@@ -54,7 +56,7 @@ function alpha99_the_excerpt( $excerpt ) {
 		return get_the_password_form();
 	}
 }
-add_action( "the_excerpt", "alpha99_the_excerpt" );
+add_filter( "the_excerpt", "alpha99_the_excerpt" );
 
 function alpha99_post_title( $title ) {
 	if (!post_password_required()) {
@@ -64,3 +66,9 @@ function alpha99_post_title( $title ) {
 	}
 }
 add_filter( 'protected_title_format', 'alpha99_post_title' );
+
+function alpha99_menu_item_class( $classes, $item ) {
+	$classes[] = 'list-inline-item';
+	return $classes;
+}
+add_filter( 'nav_menu_css_class', 'alpha99_menu_item_class', 10, 2);

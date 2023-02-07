@@ -9,7 +9,7 @@
 			font-family: "Arial Black";
 			width: 700px;
 			margin: auto;
-			margin-bottom: 70px;
+			margin-bottom: 30px;
 			padding-bottom: 50px;
 			border-bottom: 1px solid #ccc;
 		}
