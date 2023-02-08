@@ -16,6 +16,7 @@ function alpha99_assets() {
 	wp_enqueue_style( 'featherlight-css', '//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css' );
 
 	wp_enqueue_script( 'featherlight-js', '//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js', array( 'jquery' ), '1.7.14', true );
+	wp_enqueue_script( 'alpha99-main', get_theme_file_uri( '/assets/js/script.js' ) , array( 'jquery', 'featherlight-js' ), '1.7.14', true );
 }
 add_action( 'wp_enqueue_scripts', 'alpha99_assets' );
 
