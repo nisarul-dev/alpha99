@@ -1,6 +1,6 @@
 <?php $alpha99_featured_image = get_the_post_thumbnail_url( null, "large" ); ?>
 
-<div class="header" style="background: url(<?php echo $alpha99_featured_image?>) center center; background-size: cover;">
+<div class="header header-bg" style="background: url(<?php echo $alpha99_featured_image?>) center center; background-size: cover;">
 	<div class="container text-white">
 		<div class="row">
 			<div class="col-md-12">

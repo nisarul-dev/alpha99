@@ -1,5 +1,9 @@
-<?php get_header(); ?>
-<?php get_template_part( 'hero' ); ?>
+<?php
+/**
+ * Template Name: Hero with Background Image
+ */
+get_header(); ?>
+<?php get_template_part( 'hero-page' ); ?>
 
 <!-- Post Loop -->
 <div class="page mt-4">
