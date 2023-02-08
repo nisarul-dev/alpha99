@@ -23,9 +23,14 @@
 									</p>
 									<p>
 										<?php
-										the_post_thumbnail( 'large', array(
-											'class' => 'img-fluid',
-										) );
+										if ( has_post_thumbnail() ) {
+											$thumbnail_url = get_the_post_thumbnail_url( null, 'large' );
+											printf( '<a href="%s" data-featherlight="image">', $thumbnail_url);
+											the_post_thumbnail( 'large', array(
+												'class' => 'img-fluid',
+											) );
+											echo '</a>';
+										}
 										?>
 									</p>
 									<?php the_content(); ?>
