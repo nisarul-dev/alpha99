@@ -3,7 +3,7 @@
  * Template Name: Hero with Background Image
  */
 get_header(); ?>
-<?php get_template_part( 'hero-page' ); ?>
+<?php get_template_part( 'template-parts/hero-bg' ); ?>
 
 <!-- Post Loop -->
 <div class="page mt-4">
