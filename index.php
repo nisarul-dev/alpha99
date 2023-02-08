@@ -2,7 +2,7 @@
 <?php get_template_part( 'hero' ); ?>
 
 <!-- Post Loop -->
-<div class="posts">
+<div class="posts mt-4">
     <?php
         while( have_posts() ) :
             the_post();

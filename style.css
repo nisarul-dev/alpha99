@@ -7,7 +7,7 @@ Description: Alpha99 is a theme for your personal blog.
 Requires at least: 5.3
 Tested up to: 6.1
 Requires PHP: 7.1
-Version: 1.7
+Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: alpha99
@@ -18,8 +18,8 @@ h1.heading {
     font-family: "Arial Black";
     width: 700px;
     margin: auto;
-    margin-bottom: 30px;
-    padding-bottom: 50px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
     border-bottom: 1px solid #ccc;
 }
 
@@ -28,7 +28,7 @@ h3.tagline {
     margin: auto;
     font-size: 18px;
     margin-top: 50px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     width: 700px;
     text-align: center;
 }
@@ -67,6 +67,10 @@ h2.post-title {
 .tags li,
 .tags li a {
     color: #3D9970;
+}
+
+.page .navigation ul li a {
+    color: white;
 }
 
 img {

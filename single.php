@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <?php get_template_part( 'hero' ); ?>
 
-<div class="container">
+<div class="container mt-4">
 	<div class="row">
 		<div class="col-md-8">
 			<!-- Post Loop -->
