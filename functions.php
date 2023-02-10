@@ -82,3 +82,15 @@ function alpha99_menu_item_class( $classes, $item ) {
 	return $classes;
 }
 add_filter( 'nav_menu_css_class', 'alpha99_menu_item_class', 10, 2);
+
+function alpha99_hero_background_image_banner() {
+	$alpha99_featured_image = get_the_post_thumbnail_url( null, "large" );
+	?>
+	<style>
+		.header-bg {
+			background: url(<?php echo $alpha99_featured_image; ?>) center center;
+			background-size: cover;
+		}
+	</style>
+<?php }
+add_action( 'wp_head', 'alpha99_hero_background_image_banner', 11 );
