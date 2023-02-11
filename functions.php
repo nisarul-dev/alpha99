@@ -11,7 +11,11 @@ function alpha99_bootstrapping()
 	load_theme_textdomain( 'alpha99' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( "title-tag" );
-	add_theme_support( 'custom-header');
+	$alpha99_custom_header_details = array(
+		'header-text' => true,
+		'default-text-color' => '#fff',
+	);
+	add_theme_support( 'custom-header', $alpha99_custom_header_details );
 	register_nav_menu( 'primary', __( 'Header Menu', 'alpha99' ) );
 	register_nav_menu( 'secondary', __( 'Footer Menu', 'alpha99' ) );
 }
@@ -91,11 +95,19 @@ function alpha99_hero_background_image_banner() {
 		.header {
 			background: url(<?php echo $alpha99_featured_image; ?>) center center;
 			background-size: cover;
-			color: white;
+			color: #<?php echo get_header_textcolor(); ?>;
 		}
 		.header a {
-			color: white;
+			color: #<?php echo get_header_textcolor(); ?>;
 		}
+		<?php if( ! display_header_text() ) :?>
+		.header .col-md-12:first-child {
+			display: none;
+		}
+		.header .col-md-12:last-child {
+			padding-top: 50px;
+		}
+		<?php endif; ?>
 	</style>
 	<?php else :
 	$alpha99_featured_image = get_the_post_thumbnail_url( null, "large" ); ?>
