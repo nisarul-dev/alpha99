@@ -11,6 +11,7 @@ function alpha99_bootstrapping()
 	load_theme_textdomain( 'alpha99' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( "title-tag" );
+	add_theme_support( 'custom-header');
 	register_nav_menu( 'primary', __( 'Header Menu', 'alpha99' ) );
 	register_nav_menu( 'secondary', __( 'Footer Menu', 'alpha99' ) );
 }
@@ -84,13 +85,26 @@ function alpha99_menu_item_class( $classes, $item ) {
 add_filter( 'nav_menu_css_class', 'alpha99_menu_item_class', 10, 2);
 
 function alpha99_hero_background_image_banner() {
-	$alpha99_featured_image = get_the_post_thumbnail_url( null, "large" );
-	?>
+	if ( is_home() || is_front_page() ) :
+	$alpha99_featured_image = get_header_image(); ?>
+	<style>
+		.header {
+			background: url(<?php echo $alpha99_featured_image; ?>) center center;
+			background-size: cover;
+			color: white;
+		}
+		.header a {
+			color: white;
+		}
+	</style>
+	<?php else :
+	$alpha99_featured_image = get_the_post_thumbnail_url( null, "large" ); ?>
 	<style>
 		.header-bg {
 			background: url(<?php echo $alpha99_featured_image; ?>) center center;
 			background-size: cover;
 		}
 	</style>
-<?php }
+	<?php endif;
+}
 add_action( 'wp_head', 'alpha99_hero_background_image_banner', 11 );
