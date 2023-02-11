@@ -16,6 +16,11 @@ function alpha99_bootstrapping()
 		'default-text-color' => '#fff',
 	);
 	add_theme_support( 'custom-header', $alpha99_custom_header_details );
+	$alpha_custom_logo_details = array(
+		'width'  => '100',
+		'height' => '100',
+	);
+	add_theme_support( 'custom-logo', $alpha_custom_logo_details );
 	register_nav_menu( 'primary', __( 'Header Menu', 'alpha99' ) );
 	register_nav_menu( 'secondary', __( 'Footer Menu', 'alpha99' ) );
 }

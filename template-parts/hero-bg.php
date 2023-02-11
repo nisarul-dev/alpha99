@@ -2,6 +2,9 @@
 	<div class="container text-white">
 		<div class="row">
 			<div class="col-md-12">
+				<div class="mt-5 text-center">
+					<?php echo the_custom_logo(); ?>
+				</div>
 				<h3 class="tagline text-white">
 					<?php bloginfo( 'description' ); ?>
 				</h3>
