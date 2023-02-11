@@ -14,6 +14,8 @@ function alpha99_bootstrapping()
 	$alpha99_custom_header_details = array(
 		'header-text' => true,
 		'default-text-color' => '#fff',
+		'width'  => 1200,
+		'height' => 600,
 	);
 	add_theme_support( 'custom-header', $alpha99_custom_header_details );
 	$alpha_custom_logo_details = array(
