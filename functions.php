@@ -23,6 +23,7 @@ function alpha99_bootstrapping()
 		'height' => '100',
 	);
 	add_theme_support( 'custom-logo', $alpha_custom_logo_details );
+	add_theme_support( 'custom-background' );
 	register_nav_menu( 'primary', __( 'Header Menu', 'alpha99' ) );
 	register_nav_menu( 'secondary', __( 'Footer Menu', 'alpha99' ) );
 }
